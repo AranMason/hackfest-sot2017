@@ -1,0 +1,32 @@
+Tasks 
+
+Front End
+	Map
+		Location Data
+		Get current location/select location
+		Call backend with location	
+			return data
+		display data			
+	
+Back End
+	Dummy data
+	expose api
+		Investigate Weather APIs
+		Instagram
+			Oauth2
+			Convert Data
+	Sinatra
+	
+Design Tasks
+	WIreframe
+	Userflow
+	MVP
+	Final
+	
+	
+Presentation
+
+Extention Work
+	Weather
+		Next best day for photos
+	Hash tags

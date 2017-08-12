@@ -2,25 +2,11 @@
 #Finds the most common location amoung a given dataset. 
 #image_set - the set of image data to search
 #points the top n results to return
-def freq_search(image_set, points)
-
-	frequency = Hash.new
-	
-	#Get frequency of locations in the data.
-	
-	image_set.data.each do |image|
-		loc = image.location
-		#Skip images that are not attached to a location
-		if loc != nil
-			loc_freq = frequency.fetch(loc.name, {1}){|i| i + 1 }
-			
-			frequency[loc.name] = loc_freq
-		end
-	end
+def freq_search(frequency, points)
 	
 	#Sort the locations
 
-	frequency = frequency.sort_by(|image, freq| freq).reverse
+	frequency = frequency.sort_by(){|image, freq| freq}.reverse
 	
 	#Cull down to the given number of points. If it is not a value number of points, will default to 3.
 	if points < 1 or points == nil
@@ -45,12 +31,17 @@ end
 def get_locations(image_set)
 
   locations = Set.new
-  
-  image_set.data.each do |image|
-		loc = image.location
+  frequency = Hash.new
+	
+	#Get frequency of locations in the data.
+	
+	image_set["data"].each do |image|
+		loc = image["location"]
 		#Skip images that are not attached to a location
 		if loc != nil
-                  locations.add image
+			#INcrements the frequency count of that location by one.
+			frequency[loc["name"]] = frequency.fetch(loc["name"], 1){|i| i + 1 }
+			 locations << loc			 
 		end
 	end
 

@@ -1,4 +1,11 @@
 require 'sinatra'
+require 'instagram'
+
+CLIENT_ID 		= "7c84da3caa784119b3550d2370a5c2da"
+CLIENT_SECRET 	= "cab9868fa7374c68bf32966ce93df1be"
+CALLBACK_URL 	= "https://glacial-retreat-57835.herokuapp.com/"
+
+enable :sessions
 
 get '/' do
   [200, {
@@ -32,20 +39,14 @@ get '/' do
 
 end
 
-=begin
 
-get "/media_search" do
-  client = Instagram.client(:access_token => session[:access_token])
-  html = "<h1>Get a list of media close to a given latitude and longitude</h1>"
-  for media_item in client.media_search("37.7808851","-122.3948632")
-    html << "<img src='#{media_item.images.thumbnail.url}'>"
-  end
-  html
-end
+##-----------------------------------------------
+## Instagram API Oauth2 connection
+##-----------------------------------------------
 
 Instagram.configure do |config|
-  config.client_id = "YOUR_CLIENT_ID"
-  config.client_secret = "YOUR_CLIENT_SECRET"
+  config.client_id = CLIENT_ID
+  config.client_secret = CLIENT_SECRET
   # For secured endpoints only
   #config.client_ips = '<Comma separated list of IPs>'
 end
@@ -60,4 +61,24 @@ get "/oauth/callback" do
   redirect "/nav"
 end
 
-=end
+
+##-----------------------------------------------
+## Instagram API Oauth2 connection
+##-----------------------------------------------
+
+get "/media_search" do
+  client = Instagram.client(:access_token => session[:access_token])
+  html = "<h1>Get a list of media close to a given latitude and longitude</h1>"
+  
+  media_search(client.media_search("-41.2770666667","-122.3948632"))	
+  
+  #for media_item in client.media_search("-41.2770666667","-122.3948632")
+  #  html << "<img src='#{media_item.images.thumbnail.url}'>"
+  #end
+  #html
+end
+
+def media_search(data)
+	data = client 
+
+end

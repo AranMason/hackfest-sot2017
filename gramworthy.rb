@@ -6,8 +6,11 @@ CLIENT_SECRET 	= "cab9868fa7374c68bf32966ce93df1be"
 CALLBACK_URL 	= "https://glacial-retreat-57835.herokuapp.com/"
 
 enable :sessions
-
 get '/' do
+	redirect '/index.html'
+end
+
+get '/locations' do
   [200, {
 	"data": [{
 		

@@ -40,3 +40,27 @@ var greenIcon = L.icon({
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 L.marker([51.5, -0.09], {icon: greenIcon}).addTo(map);
+
+
+getDummy();
+
+function getDummy(){
+	$.getJSON("http://localhost:8080/public/data/dummy.json", function(data){
+			console.log("Get ajax!")
+			var locations = data.data;
+			$.each(locations, function(key, val){
+				showMarkers(val.location.latitude,val.location.longitude);
+			});
+		}
+	)
+
+	.fail(function(err){
+		console.log(err)
+	})
+}
+
+
+function showMarkers(lat,long){
+	console.log(lat+" "+long)
+	var marker = L.marker([lat, long]).addTo(mymap);
+}

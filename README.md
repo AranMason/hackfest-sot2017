@@ -6,7 +6,7 @@
 Create a web application that access one of more New
 The goal of this
 
-##The Team
+|**The Team** | |
 |----------------------------------------------------|--:|
 |[Emma Sygrove-Savill]:https://github.com/emmasygsav | Designer|
 |[Junlong Wang]:https://github.com/RyanWng | Front End Developer |

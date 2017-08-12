@@ -20,7 +20,7 @@ def freq_search(image_set, points)
 	
 	#Sort the locations
 
-	frequency = frequency.sort_by(|image, freq| freq)
+	frequency = frequency.sort_by(|image, freq| freq).reverse
 	
 	
 	#Cull down to the given number of points. If it is not a value number of points, will default to 3.

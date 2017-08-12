@@ -3,7 +3,7 @@ require 'instagram'
 
 CLIENT_ID 		= "7c84da3caa784119b3550d2370a5c2da"
 CLIENT_SECRET 	= "cab9868fa7374c68bf32966ce93df1be"
-CALLBACK_URL 	= "https://glacial-retreat-57835.herokuapp.com/"
+CALLBACK_URL 	= "https://gramworthy.herokuapp.com/index.html"
 
 enable :sessions
 get '/' do

@@ -3,7 +3,7 @@ require 'instagram'
 
 CLIENT_ID 		= "7c84da3caa784119b3550d2370a5c2da"
 CLIENT_SECRET 	= "cab9868fa7374c68bf32966ce93df1be"
-CALLBACK_URL 	= "https://gramworthy.herokuapp.com/index.html"
+CALLBACK_URL 	= "https://gramworthy.herokuapp.com/"
 
 enable :sessions
 get '/' do
@@ -13,7 +13,7 @@ end
 get '/locations' do
   [200, {
 	"data": [{
-		
+
 		"location": {
 			"latitude": -41.2818,
 			"longitude": 174.7689,
@@ -72,9 +72,9 @@ end
 get "/media_search" do
   client = Instagram.client(:access_token => session[:access_token])
   html = "<h1>Get a list of media close to a given latitude and longitude</h1>"
-  
-  media_search(client.media_search("-41.2770666667","174.7784"))	
-  
+
+  media_search(client.media_search("-41.2770666667","174.7784"))
+
   #for media_item in client.media_search("-41.2770666667","-122.3948632")
   #  html << "<img src='#{media_item.images.thumbnail.url}'>"
   #end

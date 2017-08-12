@@ -1,6 +1,10 @@
-var mymap = L.map('mapid').setView([-41.28, 174.77], 12);
 
-// var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+//Location
+var mymap =
+    map = L.map('mapid', {doubleClickZoom: false}).locate({setView: true, maxZoom: 20});
+//Icon
+
+
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
     maxZoom: 18,
@@ -9,3 +13,24 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
     'Imagery © <a href="http://mapbox.com">Mapbox</a>',
     id: 'mapbox.streets'
 }).addTo(mymap);
+
+map.locate({setView: true, maxZoom: 16});
+
+
+function onLocationFound(e) {
+    var radius = e.accuracy / 2;
+
+    L.marker(e.latlng).addTo(map)
+        .bindPopup("You are within " + radius + " meters from this point").openPopup();
+
+    L.circle(e.latlng, radius).addTo(map);
+}
+
+map.on('locationfound', onLocationFound);
+
+function onLocationError(e) {
+    alert(e.message);
+}
+
+map.on('locationerror', onLocationError);
+

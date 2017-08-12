@@ -1,4 +1,4 @@
-# hackfest-sot2017
+# Hackfest 2017 - Summer of Tech
 
 ## The Project
 
@@ -13,7 +13,7 @@ The goal of this application is to allow socially engaged millennials to find ke
 ## The Team
 | | |
 |----------------------------------------------------|--:|
-|[Emma Sygrove-Savill](https://github.com/emmasygsav) | Designer|
+|[Emma Sygrove-Savill](http://www.emma-sygrovesavill.squarespace.com/) | Designer|
 |[Junlong Wang](https://github.com/RyanWng) | Frontend Developer |
 |[Mel John 'MJ' del Barrio](https://github.com/hemolyticus) | Frontend Developer |
 |[Samuel Wilson](https://github.com/samWson) | Backend Developer |
@@ -21,3 +21,4 @@ The goal of this application is to allow socially engaged millennials to find ke
 
 ### Special Thanks
 Sam Jarman - Mentor
+Roger Nesbitt 

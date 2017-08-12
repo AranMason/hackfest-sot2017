@@ -41,6 +41,32 @@ def freq_search(image_set, points)
 	return results
 end
 
+# Return a set of location objects
+def get_locations(image_set)
+
+  locations = Set.new
+  
+  image_set.data.each do |image|
+		loc = image.location
+		#Skip images that are not attached to a location
+		if loc != nil
+                  locations.add image
+		end
+	end
+
+  locations
+
+end
+
+# Return locational data for the most popular locations in a given radius
+def pop_locations(image_set, points)
+
+  freq_results = freq_search image_set, points
+
+  
+
+end
+
 #Finds all images in the given set that contains the given #tags
 def hashtag_filter(images, tags)
 	results = Array.new

@@ -3,7 +3,7 @@ require 'instagram'
 
 CLIENT_ID 		= "7c84da3caa784119b3550d2370a5c2da"
 CLIENT_SECRET 	= "cab9868fa7374c68bf32966ce93df1be"
-CALLBACK_URL 	= "https://gramworthy.herokuapp.com/"
+CALLBACK_URL 	= "https://gramworthy.herokuapp.com/oauth/callback"
 
 enable :sessions
 get '/' do
@@ -26,7 +26,8 @@ get '/locations' do
 			"latitude": -41.2721,
 			"longitude": 174.7704,
 			"name": "Tinakori Hill",
-			"rank": 2
+			"rank": 2,
+			"frequency:" 1
 		}
 	},
 	{

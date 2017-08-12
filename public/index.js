@@ -23,6 +23,13 @@ function onLocationFound(e) {
 
 map.on('locationfound', onLocationFound);
 
+function loginToInstagram()
+{
+    $.get( "/oauth/connect", function( data ) {
+
+        alert( "Load was performed." );
+    });
+}
 function onLocationError(e) {
     alert(e.message);
 }

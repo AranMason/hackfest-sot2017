@@ -2,7 +2,7 @@
 #Finds the most common location amoung a given dataset. 
 #image_set - the set of image data to search
 #points the top n results to return
-def freq_search(frequency, points)
+def mostFreq(frequency, points)
 	
 	#Sort the locations
 
@@ -45,7 +45,21 @@ def get_locations(image_set)
 		end
 	end
 
-  locations
+	most_freq = mostFreq(frequency, 3)
+	
+	most_freq_loc = Array.new
+
+	# Get the location data for the most frequent locations
+	
+	locations.each do |loc|
+		if most_freq.includes?(most_freq.keys)
+			# 
+			loc['frequency'] = most_freq[loc['name']]
+			most_freq_loc << loc
+		end
+	end
+	
+	return most_freq_loc
 
 end
 

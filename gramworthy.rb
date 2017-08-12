@@ -18,7 +18,7 @@ get '/locations' do
 			"latitude": -41.2818,
 			"longitude": 174.7689,
 			"name": "Kelburn",
-			"rank": 1
+			"frequency": 1
 		}
 	},
 	{
@@ -26,8 +26,7 @@ get '/locations' do
 			"latitude": -41.2721,
 			"longitude": 174.7704,
 			"name": "Tinakori Hill",
-			"rank": 2,
-			"frequency": 1
+			"frequency": 2
 		}
 	},
 	{
@@ -35,7 +34,7 @@ get '/locations' do
 			"latitude": -41.2773,
 			"longitude": 174.7784,
 			"name": "Thorndon",
-			"rank": 3
+			"frequency": 3
 		}
 	}
 	]

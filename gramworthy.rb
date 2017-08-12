@@ -63,6 +63,8 @@ end
 
 get "/oauth/callback" do
   response = Instagram.get_access_token(params[:code], :redirect_uri => CALLBACK_URL)
+  puts response.inspect
+  puts response.access_token
   @token = response.access_token
   #session[:access_token] = response.access_token
   redirect '/media_search'
@@ -74,6 +76,7 @@ end
 ##-----------------------------------------------
 
 get "/media_search" do
+  puts @token
   client = Instagram.client(:access_token => @token)
   [200,  client.media_search("37.7808851","-122.3948632")]
 end

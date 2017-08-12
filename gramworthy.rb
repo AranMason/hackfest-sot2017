@@ -70,15 +70,10 @@ get "/media_search" do
   client = Instagram.client(:access_token => session[:access_token])
   html = "<h1>Get a list of media close to a given latitude and longitude</h1>"
   
-  media_search(client.media_search("-41.2770666667","-122.3948632"))	
+  media_search(client.media_search("-41.2770666667","174.7784"))	
   
   #for media_item in client.media_search("-41.2770666667","-122.3948632")
   #  html << "<img src='#{media_item.images.thumbnail.url}'>"
   #end
   #html
-end
-
-def media_search(data)
-	data = client 
-
 end

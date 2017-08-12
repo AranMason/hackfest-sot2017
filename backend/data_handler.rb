@@ -9,9 +9,16 @@ def feq_search(data)
 end
 
 #Finds all images in the given set that contains the given #tags
-def hashtag_filter(data, tags)
+def hashtag_filter(images, tags)
 	results = Array.new
-	for image in data
+	
+	images.data.each do |photo|
+		photo.tags.each do |tag|
+			
+		end
+	end
+	
+	for image in data.data
 		for tag in tags
 			if image.tags.includes? tag
 				results << image

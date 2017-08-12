@@ -27,7 +27,7 @@ get '/locations' do
 			"longitude": 174.7704,
 			"name": "Tinakori Hill",
 			"rank": 2,
-			"frequency:" 1
+			"frequency": 1
 		}
 	},
 	{

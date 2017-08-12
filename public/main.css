@@ -1,1 +1,69 @@
-#mapid { height: 400px; }
+img
+ {
+     border: thin;
+     border-color: #2DAAE4 ;
+     border-width: 2px;
+     margin: 10px 5px 10px 5px;
+ }
+header {
+    background: yellowgreen;
+
+   height: 90px;
+}
+
+
+
+.container
+{
+    margin-top: 10px;
+    margin-right: 0px;
+
+
+}
+
+#thumbs {
+     width: 30%;
+     margin-top: 90px;
+     margin-left: auto;
+     margin-right: auto;
+
+    text-align: justify;
+     -ms-text-justify: distribute-all-lines;
+     text-justify: distribute-all-lines;
+ }
+
+#pictureresults
+{
+    float: left;
+}
+
+
+#searchbox
+{
+    margin-top: 3px;
+}
+#instagrambutton
+{
+    vertical-align: middle;
+    padding: 10px 20px;
+    border-radius: 5px;
+
+   float: right;
+}
+#mapid { height: 580px; }
+
+#mapid {
+    width:67%;
+    height: 700px;
+
+
+   float:left;
+}
+
+#results{
+    width:33%;
+    height: 700px;
+
+
+   float:left;
+}

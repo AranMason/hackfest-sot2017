@@ -1,6 +1,8 @@
-var mymap = L.map('mapid').setView([-41.28, 174.77], 12);
+$('document').ready(function(){
+    console.log("Document ready");
+});
 
-// var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+var map = L.map('mapid').setView([-41.28, 174.77], 12);
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
     maxZoom: 18,
@@ -8,7 +10,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
     '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
     'Imagery © <a href="http://mapbox.com">Mapbox</a>',
     id: 'mapbox.streets'
-}).addTo(mymap);
+}).addTo(map);
 
 map.locate({setView: true, maxZoom: 16});
 
@@ -48,11 +50,42 @@ var greenIcon = L.icon({
 });
 L.marker([51.5, -0.09], {icon: greenIcon}).addTo(map);
 
+//getDummy();
 
-getDummy();
+
+
+function getLatLng(e){
+    console.log("find latlng: "+e.latlng);
+    var latLng = e.latlng;
+    var lat = e.latlng['lat'];
+    var long = e.latlng['lng'];
+
+    $.getJSON("/locations", {lat,long}, function(data){
+        console.log(data);
+        
+        var locations = data.data;
+        $.each(locations, function(key, val){
+            showMarkers(val.location.latitude,val.location.longitude);
+        });
+
+    });
+
+}
+
+/**
+    Listen event
+*/
+map.on('click', getLatLng);
+
+
+
+
+/**
+    Function Definition
+*/
 
 function getDummy(){
-	$.getJSON("http://localhost:8080/public/data/dummy.json", function(data){
+	$.getJSON("data/dummy.json", function(data){
 			console.log("Get ajax!")
 			var locations = data.data;
 			$.each(locations, function(key, val){
@@ -62,12 +95,15 @@ function getDummy(){
 	)
 
 	.fail(function(err){
-		console.log(err)
+		console.log("oops ",err)
 	})
 }
 
 
 function showMarkers(lat,long){
 	console.log(lat+" "+long)
-	var marker = L.marker([lat, long]).addTo(mymap);
+	var marker = L.marker([lat, long]).addTo(map).bindPopup("For test now");
 }
+
+
+

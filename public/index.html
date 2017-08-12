@@ -17,18 +17,66 @@
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous"></script>
 
-
-
+    <script src="https://use.fontawesome.com/b285188688.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="main.css"/>
 </head>
 <body>
-<div id="instagrambutton">
-    <button onclick="loginToInstagram()" type="button" class="btn btn-outline-info btn-lg"><i class="fa fa-instagram" aria-hidden="true"></i>  Login</button>
-</div>
-<div id="mapid"></div>
+<header>
+    <div id="instagrambutton">
+        <button onclick="loginToInstagram()" type="button" class="btn btn-outline-info btn-lg"><i class="fa fa-instagram" aria-hidden="true"></i>  Login</button>
+    </div>
 
-<script type="text/javascript" src="index.js">
-</script>
+
+
+
+</header>
+
+<div id="results" class="horizontal">
+
+     <div class="col-lg-8" id="searchbox">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search for..." aria-label="Search for...">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+      </span>
+    </div>
+  </div>
+
+    <div class="container" id="pictureresults">
+        <div class="thumbs">
+            <a id="single_image1" href="#"><img src="http://dummyimage.com/125x125/444/fff" alt=""/></a>
+            <a id="single_image2" href="#"><img src="http://dummyimage.com/125x125/444/fff" alt=""/></a>
+            <a id="single_image3" href="#"><img src="http://dummyimage.com/125x125/444/fff" alt=""/></a>
+            <span class="stretch"></span>
+        </div>
+        <div class="thumbs">
+            <a id="single_image4" href="#"><img src="http://dummyimage.com/125x125/444/fff" alt=""/></a>
+            <a id="single_image5" href="#"><img src="http://dummyimage.com/125x125/444/fff" alt=""/></a>
+            <a id="single_image6" href="#"><img src="http://dummyimage.com/125x125/444/fff" alt=""/></a>
+            <span class="stretch"></span>
+        </div>
+
+        <div class="thumbs">
+            <a id="single_image7" href="#"><img src="http://dummyimage.com/125x125/444/fff" alt=""/></a>
+            <a id="single_image8" href="#"><img src="http://dummyimage.com/125x125/444/fff" alt=""/></a>
+            <a id="single_image9" href="#"><img src="http://dummyimage.com/125x125/444/fff" alt=""/></a>
+            <span class="stretch"></span>
+        </div>
+        <div class="thumbs">
+            <a id="single_image10" href="#"><img src="http://dummyimage.com/125x125/444/fff" alt=""/></a>
+            <a id="single_image11" href="#"><img src="http://dummyimage.com/125x125/444/fff" alt=""/></a>
+            <a id="single_image12" href="#"><img src="http://dummyimage.com/125x125/444/fff" alt=""/></a>
+            <span class="stretch"></span>
+        </div>
+    </div>
+
+</div>
+<div id="mapid" class="horizontal"></div>
+
+<script src="https://use.fontawesome.com/b285188688.js"></script>
+<script type="text/javascript" src="index.js"></script>
 
 </body>
 </html>

@@ -7,7 +7,7 @@ CALLBACK_URL 	= "https://gramworthy.herokuapp.com/oauth/callback"
 
 enable :sessions
 get '/' do
-	redirect '/oauth/connect'
+	redirect '/oauth/connect' # This needs to be changed back to root '/' later
 end
 
 get '/locations' do

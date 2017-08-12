@@ -14,8 +14,8 @@ The goal of this application is to allow socially engaged millennials to find ke
 | | |
 |----------------------------------------------------|--:|
 |[Emma Sygrove-Savill](https://github.com/emmasygsav) | Designer|
-|[Junlong Wang](https://github.com/RyanWng) | Front End Developer |
-|[Mel John 'MJ' del Barrio](https://github.com/hemolyticus) | Front End Developer |
+|[Junlong Wang](https://github.com/RyanWng) | Frontend Developer |
+|[Mel John 'MJ' del Barrio](https://github.com/hemolyticus) | Frontend Developer |
 |[Samuel Wilson](https://github.com/samWson) | Backend Developer |
 |[Aran Mason](https://github.com/AngelOfMercy) | Backend Developer |
 

@@ -12,9 +12,9 @@ def freq_search(image_set, points)
 		loc = image.location
 		#Skip images that are not attached to a location
 		if loc != nil
-			loc_freq = frequency.fetch(loc, {1}){|i| i + 1 }
+			loc_freq = frequency.fetch(loc.name, {1}){|i| i + 1 }
 			
-			frequency[loc] = loc_freq
+			frequency[loc.name] = loc_freq
 		end
 	end
 	
@@ -22,16 +22,23 @@ def freq_search(image_set, points)
 
 	frequency = frequency.sort_by(|image, freq| freq).reverse
 	
-	
 	#Cull down to the given number of points. If it is not a value number of points, will default to 3.
 	if points < 1 or points == nil
 		points = 3
 	end
 	
+	results = Hash.new
+	
+	points = [points, frequency.length].min
+	
+	points.times do |i|
+		key = frequency.keys[i]
+		results[key] = (frequency[key])
+	end
 	
 	
 	#https://stackoverflow.com/questions/4339553/sort-hash-by-key-return-hash-in-ruby
-	return frequency
+	return results
 end
 
 #Finds all images in the given set that contains the given #tags

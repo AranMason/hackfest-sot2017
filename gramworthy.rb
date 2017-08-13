@@ -258,7 +258,7 @@ end
 
 get "/media_search" do
   puts @token
-  client = Instagram.client(:access_token => @token)
-  [200,  client.media_search("37.7808851","-122.3948632")]
+  client = client.user
+  [200,  client]
 end
 

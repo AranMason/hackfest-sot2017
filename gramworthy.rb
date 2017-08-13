@@ -10,7 +10,7 @@ enable :sessions
 @token
 
 get '/' do
-	redirect '/oauth/connect' # This needs to be changed back to root '/' later
+	redirect '/index.html' # This needs to be changed back to root '/' later
 end
 
 get '/locations' do

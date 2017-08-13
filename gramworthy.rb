@@ -243,9 +243,9 @@ get "/oauth/callback" do
 end
 =end
 
-get "/oauth/callback" do
+get "/callback" do
 	client.get_access_token(params[:code])
-	redirect "/test"
+	client.user
 end
 
 get '/test' do

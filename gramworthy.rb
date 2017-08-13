@@ -224,7 +224,7 @@ get "/oauth/callback" do
   puts response.access_token
   @token = response.access_token
   #session[:access_token] = response.access_token
-  redirect '/media_search'
+  redirect '/index.html'
 end
 
 

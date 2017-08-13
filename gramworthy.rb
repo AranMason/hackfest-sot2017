@@ -47,7 +47,7 @@ end
 
 get '/location/images' do
 	[200, {
-    {
+    
     "data": [
 	
 	

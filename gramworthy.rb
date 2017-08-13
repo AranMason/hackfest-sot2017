@@ -245,7 +245,7 @@ end
 =end
 
 get '/auth' do
-	redirect client.authorize_url
+	redirect client.authorize_url + "?scope=public_content"
 end
 
 get "/callback" do

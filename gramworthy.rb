@@ -8,7 +8,7 @@ CALLBACK_URL 	= "https://gramworthy.herokuapp.com/oauth/callback"
 client = Instagram.client(
 	  :client_id     => '7c84da3caa784119b3550d2370a5c2da',
 	  :client_secret => 'cab9868fa7374c68bf32966ce93df1be',
-	  :callback_url  => 'http://example.com/'
+	  :callback_url  => 'https://gramworthy.herokuapp.com/'
 	)
 
 

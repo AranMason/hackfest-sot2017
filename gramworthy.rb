@@ -18,25 +18,25 @@ get '/locations' do
 	"data": [{
 
 		"location": {
-			      "latitude": -41.2818,
-			"longitude": 174.7689,
-			"name": "Kelburn",
+			      "latitude": -41.307489,
+			"longitude": 174.777088,
+			"name": "Newtown",
 			"frequency": 1
 		}
 	},
 	{
 		"location": {
-			"latitude": -41.2721,
-			"longitude": 174.7704,
-			"name": "Tinakori Hill",
+			"latitude": -41.310967,
+			"longitude": 174.779663,
+			"name": "Newtown",
 			"frequency": 2
 		}
 	},
 	{
 		"location": {
-			"latitude": -41.2773,
-			"longitude": 174.7784,
-			"name": "Thorndon",
+			"latitude": -41.303641,
+			"longitude": 174.774985,
+			"name": "Mount Cook",
 			"frequency": 3
 		}
 	}

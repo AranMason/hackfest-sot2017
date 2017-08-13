@@ -45,6 +45,156 @@ get '/locations' do
 
 end
 
+get '/location/images' do
+	[200, {
+    "data": [
+	{ 
+        "images": {
+            "thumbnail": {
+                "url": "loremflickr.com/125/125/",
+                "width": 125,
+                "height": 125
+            }
+		}
+    },
+    { 
+        "images": {
+            "thumbnail": {
+                "url": "loremflickr.com/125/125/",
+                "width": 125,
+                "height": 125
+            }
+		}
+    },
+	{ 
+        "images": {
+            "thumbnail": {
+                "url": "loremflickr.com/125/125/",
+                "width": 125,
+                "height": 125
+            }
+		}
+    },
+	{ 
+        "images": {
+            "thumbnail": {
+                "url": "loremflickr.com/125/125/",
+                "width": 125,
+                "height": 125
+            }
+		}
+    },
+	{ 
+        "images": {
+            "thumbnail": {
+                "url": "loremflickr.com/125/125/",
+                "width": 125,
+                "height": 125
+            }
+		}
+    },
+	{ 
+        "images": {
+            "thumbnail": {
+                "url": "loremflickr.com/125/125/",
+                "width": 125,
+                "height": 125
+            }
+		}
+    },
+	{ 
+        "images": {
+            "thumbnail": {
+                "url": "loremflickr.com/125/125/",
+                "width": 125,
+                "height": 125
+            }
+		}
+    },
+	{ 
+        "images": {
+            "thumbnail": {
+                "url": "loremflickr.com/125/125/",
+                "width": 125,
+                "height": 125
+            }
+		}
+    },
+	{ 
+        "images": {
+            "thumbnail": {
+                "url": "loremflickr.com/125/125/",
+                "width": 125,
+                "height": 125
+            }
+		}
+    },
+	{ 
+        "images": {
+            "thumbnail": {
+                "url": "loremflickr.com/125/125/",
+                "width": 125,
+                "height": 125
+            }
+		}
+    },
+	{ 
+        "images": {
+            "thumbnail": {
+                "url": "loremflickr.com/125/125/",
+                "width": 125,
+                "height": 125
+            }
+		}
+    },
+	{ 
+        "images": {
+            "thumbnail": {
+                "url": "loremflickr.com/125/125/",
+                "width": 125,
+                "height": 125
+            }
+		}
+    },
+	{ 
+        "images": {
+            "thumbnail": {
+                "url": "loremflickr.com/125/125/",
+                "width": 125,
+                "height": 125
+            }
+		}
+    },
+	{ 
+        "images": {
+            "thumbnail": {
+                "url": "loremflickr.com/125/125/",
+                "width": 125,
+                "height": 125
+            }
+		}
+    },
+	{ 
+        "images": {
+            "thumbnail": {
+                "url": "loremflickr.com/125/125/",
+                "width": 125,
+                "height": 125
+            }
+		}
+    },
+	{ 
+        "images": {
+            "thumbnail": {
+                "url": "loremflickr.com/125/125/",
+                "width": 125,
+                "height": 125
+            }
+		}
+    }]
+}.to_json]
+
+end
 
 ##-----------------------------------------------
 ## Instagram API Oauth2 connection
@@ -80,3 +230,4 @@ get "/media_search" do
   client = Instagram.client(:access_token => @token)
   [200,  client.media_search("37.7808851","-122.3948632")]
 end
+

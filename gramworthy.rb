@@ -13,7 +13,7 @@ get '/' do
 	redirect '/oauth/connect' # This needs to be changed back to root '/' later
 end
 
-get '/locations/images' do
+get '/locations' do
   [200, {
 	"data": [{
 
@@ -45,7 +45,7 @@ get '/locations/images' do
 
 end
 
-get '/locations' do
+get '/locations/images' do
 	[200, {
     
     "data": [

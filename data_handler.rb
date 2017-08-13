@@ -2,7 +2,9 @@ require 'json'
 require 'set'
 
 
-
+def test(data)
+	data.to_json
+end
 
 #Finds the most common location amoung a given dataset. 
 #image_set - the set of image data to search

@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'instagram_api'
+require 'data_handler.rb'
 
 #CLIENT_ID 		= "7c84da3caa784119b3550d2370a5c2da"
 #CLIENT_SECRET 	= "cab9868fa7374c68bf32966ce93df1be"
@@ -253,7 +254,7 @@ get "/callback" do
 end
 
 get '/test' do
-	[200, client.user]
+	[200, test(client.recent)]
 end
 
 ##-----------------------------------------------

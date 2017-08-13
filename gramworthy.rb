@@ -249,7 +249,7 @@ end
 
 get "/callback" do
 	client.get_access_token(params[:code])
-	client.user.to_s
+	client.user.to_json
 end
 
 get '/test' do

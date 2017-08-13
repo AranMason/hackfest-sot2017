@@ -38,17 +38,17 @@ function onLocationError(e) {
 
 map.on('locationerror', onLocationError);
 
-var greenIcon = L.icon({
-    iconUrl: 'leaf-green.png',
-    shadowUrl: 'leaf-shadow.png',
+// var userLocationIcon = L.icon({
+//     iconUrl: 'images/userlocationIcon.png',
+//     shadowUrl: 'leaf-shadow.png',
 
-    iconSize:     [38, 95], // size of the icon
-    shadowSize:   [50, 64], // size of the shadow
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62],  // the same for the shadow
-    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-});
-L.marker([51.5, -0.09], {icon: greenIcon}).addTo(map);
+//     iconSize:     [38, 95], // size of the icon
+//     shadowSize:   [50, 64], // size of the shadow
+//     iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+//     shadowAnchor: [4, 62],  // the same for the shadow
+//     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+// });
+// L.marker([51.5, -0.09], {icon: userLocationIcon}).addTo(map);
 
 //getDummy();
 
@@ -60,7 +60,7 @@ function getLatLng(e){
     var lat = e.latlng['lat'];
     var long = e.latlng['lng'];
 
-    $.getJSON("/locations/images", {lat,long}, function(data){
+    $.getJSON("/locations", {lat,long}, function(data){
         console.log(data);
         
         var locations = data.data;
@@ -89,28 +89,51 @@ map.on('click', getLatLng);
 function showMarkers(lat,long, name, frequency){
     console.log(lat+" "+long)
     var marker = L.marker([lat, long]).addTo(map).bindPopup("<strong>"+name+"</strong><br/>" + "<strong>"+frequency+"</strong>");
-}
-
-function addPopup(name, rank)
-{
-
+    marker.on('click', getImages);
 }
 
 
+function getImages(){
 
-
-
-function getDummy(){
-	$.getJSON("data/dummy.json", function(data){
-			console.log("Get ajax!")
-			var locations = data.data;
-			$.each(locations, function(key, val){
-				showMarkers(val.location.latitude,val.location.longitude);
-			});
-		}
-	)
-
-	.fail(function(err){
-		console.log("oops ",err)
-	})
+    $.getJSON('/locations/images', function (data) {
+        $('.thumbs').empty();
+        var images = data.data;
+        $.each(images, function(key,val){
+            insertImage(val.images.thumbnail.url)
+        });
+    })
 }
+
+function insertImage(url){
+    var img = $('<img />').attr({
+            'src': url+"?rand=" + Math.random().toString(),
+            'alt': "loading...",
+        }).appendTo('.thumbs');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function getDummy(){
+// 	$.getJSON("data/dummy.json", function(data){
+// 			console.log("Get ajax!")
+// 			var locations = data.data;
+// 			$.each(locations, function(key, val){
+// 				showMarkers(val.location.latitude,val.location.longitude);
+// 			});
+// 		}
+// 	)
+
+// 	.fail(function(err){
+// 		console.log("oops ",err)
+// 	})
+// }

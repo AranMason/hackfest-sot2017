@@ -1,4 +1,4 @@
-img
+.thumbs img
  {
      border: thin;
      border-color: #2DAAE4 ;
@@ -22,7 +22,8 @@ header {
 
 .logo{
 	display:block;
-	margin:auto auto;
+	margin:auto;
+	height:84px;
 }
 
 .btn-outline-primary{
@@ -43,15 +44,19 @@ header {
      margin-top: 90px;
      margin-left: auto;
      margin-right: auto;
-
+	height:600px;
     text-align: justify;
      -ms-text-justify: distribute-all-lines;
      text-justify: distribute-all-lines;
+    overflow-y:scroll;
  }
 
 #pictureresults
 {
     float: left;
+    max-height:650px;
+    overflow-y:scroll;
+
 }
 
 
@@ -81,7 +86,7 @@ header {
 #mapid { height: 580px; }
 
 #mapid {
-    width:67%;
+    width:64%;
     height: 700px;
 
 
@@ -89,9 +94,9 @@ header {
 }
 
 #results{
-    width:33%;
+    width:35%;
     height: 700px;
-
+	box-sizing:border;
 
    float:left;
 }

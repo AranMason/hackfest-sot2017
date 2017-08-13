@@ -256,7 +256,8 @@ end
 get '/test' do
 	[200, test(client.media_search(
 	  :lat => "41.3139",
-	  :lng => "174.7694"
+	  :lng => "174.7694",
+	  :distance => 5000
 	))]
 end
 

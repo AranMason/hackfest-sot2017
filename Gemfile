@@ -3,3 +3,4 @@ ruby '2.3.4'
 
 gem 'sinatra'
 gem 'instagram'
+gem 'instagram_api'

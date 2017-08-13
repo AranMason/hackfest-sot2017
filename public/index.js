@@ -88,7 +88,7 @@ map.on('click', getLatLng);
 
 function showMarkers(lat,long, name, frequency){
     console.log(lat+" "+long)
-    var marker = L.marker([lat, long]).addTo(map).bindPopup("<strong>"+name+"</strong><br/>" + "<strong>"+frequency+"</strong>");
+    var marker = L.marker([lat, long]).addTo(map).bindPopup("<strong>"+name+"</strong><br/>" + "<strong>Rank: "+frequency+"</strong>");
     marker.on('click', getImages);
 }
 

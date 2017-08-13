@@ -248,7 +248,7 @@ get "/oauth/callback" do
 	redirect "/test"
 end
 
-get "/test" do
+get '/test' do
 	[200, client.user]
 end
 

@@ -60,12 +60,13 @@ function getLatLng(e){
     var lat = e.latlng['lat'];
     var long = e.latlng['lng'];
 
-    $.getJSON("/locations", {lat,long}, function(data){
+    $.getJSON("/locations/images", {lat,long}, function(data){
         console.log(data);
         
         var locations = data.data;
         $.each(locations, function(key, val){
-            showMarkers(val.location.latitude,val.location.longitude,val.location.name, val.location.rank)
+            console.log(val)
+            showMarkers(val.location.latitude,val.location.longitude,val.location.name, val.location.frequency)
             
         });
 
@@ -85,9 +86,9 @@ map.on('click', getLatLng);
     Function Definition
 */
 
-function showMarkers(lat,long, name, rank){
+function showMarkers(lat,long, name, frequency){
     console.log(lat+" "+long)
-    var marker = L.marker([lat, long]).addTo(map).bindPopup("<strong>"+name+"</strong><br/>" + "<strong>"+rank+"</strong>");
+    var marker = L.marker([lat, long]).addTo(map).bindPopup("<strong>"+name+"</strong><br/>" + "<strong>"+frequency+"</strong>");
 }
 
 function addPopup(name, rank)

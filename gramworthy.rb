@@ -1,5 +1,5 @@
 require 'sinatra'
-require 'instagram'
+require 'instagram_api'
 
 CLIENT_ID 		= "7c84da3caa784119b3550d2370a5c2da"
 CLIENT_SECRET 	= "cab9868fa7374c68bf32966ce93df1be"

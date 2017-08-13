@@ -47,38 +47,27 @@ end
 
 get '/location/images' do
 	[200, {
+    {
     "data": [
+	
+	
 	{ 
         "images": {
             "thumbnail": {
-                "url": "loremflickr.com/125/125/",
+                "url": "https://loremflickr.com/125/125/coffee,%20wellington/all",
                 "width": 125,
                 "height": 125
             }
 		}
     },
-    { 
-        "images": {
-            "thumbnail": {
-                "url": "loremflickr.com/125/125/",
-                "width": 125,
-                "height": 125
-            }
-		}
-    },
+    
+	
+	
+	
 	{ 
         "images": {
             "thumbnail": {
-                "url": "loremflickr.com/125/125/",
-                "width": 125,
-                "height": 125
-            }
-		}
-    },
-	{ 
-        "images": {
-            "thumbnail": {
-                "url": "loremflickr.com/125/125/",
+                "url": "https://loremflickr.com/125/125/coffee,%20wellington/all",
                 "width": 125,
                 "height": 125
             }
@@ -87,7 +76,7 @@ get '/location/images' do
 	{ 
         "images": {
             "thumbnail": {
-                "url": "loremflickr.com/125/125/",
+                "url": "https://loremflickr.com/125/125/coffee,%20wellington/all",
                 "width": 125,
                 "height": 125
             }
@@ -96,7 +85,7 @@ get '/location/images' do
 	{ 
         "images": {
             "thumbnail": {
-                "url": "loremflickr.com/125/125/",
+                "url": "https://loremflickr.com/125/125/coffee,%20wellington/all",
                 "width": 125,
                 "height": 125
             }
@@ -105,7 +94,7 @@ get '/location/images' do
 	{ 
         "images": {
             "thumbnail": {
-                "url": "loremflickr.com/125/125/",
+                "url": "https://loremflickr.com/125/125/coffee,%20wellington/all",
                 "width": 125,
                 "height": 125
             }
@@ -114,7 +103,7 @@ get '/location/images' do
 	{ 
         "images": {
             "thumbnail": {
-                "url": "loremflickr.com/125/125/",
+                "url": "https://loremflickr.com/125/125/coffee,%20wellington/all",
                 "width": 125,
                 "height": 125
             }
@@ -123,7 +112,7 @@ get '/location/images' do
 	{ 
         "images": {
             "thumbnail": {
-                "url": "loremflickr.com/125/125/",
+                "url": "https://loremflickr.com/125/125/coffee,%20wellington/all",
                 "width": 125,
                 "height": 125
             }
@@ -132,7 +121,7 @@ get '/location/images' do
 	{ 
         "images": {
             "thumbnail": {
-                "url": "loremflickr.com/125/125/",
+                "url": "https://loremflickr.com/125/125/coffee,%20wellington/all",
                 "width": 125,
                 "height": 125
             }
@@ -141,7 +130,7 @@ get '/location/images' do
 	{ 
         "images": {
             "thumbnail": {
-                "url": "loremflickr.com/125/125/",
+                "url": "https://loremflickr.com/125/125/coffee,%20wellington/all",
                 "width": 125,
                 "height": 125
             }
@@ -150,7 +139,7 @@ get '/location/images' do
 	{ 
         "images": {
             "thumbnail": {
-                "url": "loremflickr.com/125/125/",
+                "url": "https://loremflickr.com/125/125/coffee,%20wellington/all",
                 "width": 125,
                 "height": 125
             }
@@ -159,7 +148,7 @@ get '/location/images' do
 	{ 
         "images": {
             "thumbnail": {
-                "url": "loremflickr.com/125/125/",
+                "url": "https://loremflickr.com/125/125/coffee,%20wellington/all",
                 "width": 125,
                 "height": 125
             }
@@ -168,7 +157,7 @@ get '/location/images' do
 	{ 
         "images": {
             "thumbnail": {
-                "url": "loremflickr.com/125/125/",
+                "url": "https://loremflickr.com/125/125/coffee,%20wellington/all",
                 "width": 125,
                 "height": 125
             }
@@ -177,7 +166,7 @@ get '/location/images' do
 	{ 
         "images": {
             "thumbnail": {
-                "url": "loremflickr.com/125/125/",
+                "url": "https://loremflickr.com/125/125/coffee,%20wellington/all",
                 "width": 125,
                 "height": 125
             }
@@ -186,7 +175,25 @@ get '/location/images' do
 	{ 
         "images": {
             "thumbnail": {
-                "url": "loremflickr.com/125/125/",
+                "url": "https://loremflickr.com/125/125/coffee,%20wellington/all",
+                "width": 125,
+                "height": 125
+            }
+		}
+    },
+	{ 
+        "images": {
+            "thumbnail": {
+                "url": "https://loremflickr.com/125/125/coffee,%20wellington/all",
+                "width": 125,
+                "height": 125
+            }
+		}
+    },
+	{ 
+        "images": {
+            "thumbnail": {
+                "url": "https://loremflickr.com/125/125/coffee,%20wellington/all",
                 "width": 125,
                 "height": 125
             }

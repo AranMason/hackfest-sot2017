@@ -18,7 +18,7 @@ get '/locations/images' do
 	"data": [{
 
 		"location": {
-			"latitude": -41.2818,
+			      "latitude": -41.2818,
 			"longitude": 174.7689,
 			"name": "Kelburn",
 			"frequency": 1
@@ -53,13 +53,19 @@ get '/locations' do
 	
 	{ 
         "images": {
-            "thumbnail": {
-                "url": "https://loremflickr.com/125/125/coffee,%20wellington/all",
-                "width": 125,
-                "height": 125
-            }
-		}
-    },
+                    "thumbnail": {
+                                   "url": "https://loremflickr.com/125/125/coffee,%20wellington/all",
+                                  "width": 125,
+                                  "height": 125
+                                 },
+                   "location": {
+                                 "latitude": -41.2818,
+			        "longitude": 174.7689,
+			        "name": "Kelburn",
+			        "frequency": 1
+                               }
+		  }
+        },
     
 	
 	

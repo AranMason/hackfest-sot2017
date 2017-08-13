@@ -1,6 +1,9 @@
 require 'json'
 require 'set'
 
+
+
+
 #Finds the most common location amoung a given dataset. 
 #image_set - the set of image data to search
 #points the top n results to return
@@ -64,6 +67,8 @@ def get_locations(image_set)
 	return most_freq_loc
 
 end
+
+
 
 # Return locational data for the most popular locations in a given radius
 def pop_locations(image_set, points)

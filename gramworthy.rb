@@ -5,6 +5,13 @@ CLIENT_ID 		= "7c84da3caa784119b3550d2370a5c2da"
 CLIENT_SECRET 	= "cab9868fa7374c68bf32966ce93df1be"
 CALLBACK_URL 	= "https://gramworthy.herokuapp.com/oauth/callback"
 
+client = Instagram.client(
+	  :client_id     => '7c84da3caa784119b3550d2370a5c2da',
+	  :client_secret => 'cab9868fa7374c68bf32966ce93df1be',
+	  :callback_url  => 'http://example.com/'
+	)
+
+
 enable :sessions
 
 @token
@@ -214,6 +221,7 @@ end
 ## Instagram API Oauth2 connection
 ##-----------------------------------------------
 
+=begin
 Instagram.configure do |config|
   config.client_id = CLIENT_ID
   config.client_secret = CLIENT_SECRET
@@ -233,7 +241,16 @@ get "/oauth/callback" do
   #session[:access_token] = response.access_token
   redirect '/index.html'
 end
+=end
 
+get "/oauth/callback" do
+	client.get_access_token(params[:code])
+	redirect "/test"
+end
+
+get "/test" do
+	[200, client.user]
+end
 
 ##-----------------------------------------------
 ## Instagram API Oauth2 connection

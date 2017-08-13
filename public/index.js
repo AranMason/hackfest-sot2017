@@ -65,7 +65,8 @@ function getLatLng(e){
         
         var locations = data.data;
         $.each(locations, function(key, val){
-            showMarkers(val.location.latitude,val.location.longitude);
+            showMarkers(val.location.latitude,val.location.longitude,val.location.name, val.location.rank)
+            
         });
 
     });
@@ -84,6 +85,20 @@ map.on('click', getLatLng);
     Function Definition
 */
 
+function showMarkers(lat,long, name, rank){
+    console.log(lat+" "+long)
+    var marker = L.marker([lat, long]).addTo(map).bindPopup("<strong>"+name+"</strong><br/>" + "<strong>"+rank+"</strong>");
+}
+
+function addPopup(name, rank)
+{
+
+}
+
+
+
+
+
 function getDummy(){
 	$.getJSON("data/dummy.json", function(data){
 			console.log("Get ajax!")
@@ -98,12 +113,3 @@ function getDummy(){
 		console.log("oops ",err)
 	})
 }
-
-
-function showMarkers(lat,long){
-	console.log(lat+" "+long)
-	var marker = L.marker([lat, long]).addTo(map).bindPopup("For test now");
-}
-
-
-

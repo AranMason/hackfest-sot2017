@@ -45,7 +45,7 @@ get '/locations/images' do
 
 end
 
-get '/location' do
+get '/locations' do
 	[200, {
     
     "data": [

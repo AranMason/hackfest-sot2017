@@ -23,7 +23,7 @@ end
 
 get '/locations' do
 
-  [200, get_locations(param[:lat], param[:long])
+  [200, get_locations(param[:lat], param[:long])]
 
 end
 
@@ -195,28 +195,6 @@ end
 ##-----------------------------------------------
 ## Instagram API Oauth2 connection
 ##-----------------------------------------------
-
-=begin
-Instagram.configure do |config|
-  config.client_id = CLIENT_ID
-  config.client_secret = CLIENT_SECRET
-  # For secured endpoints only
-  #config.client_ips = '<Comma separated list of IPs>'
-end
-
-get "/oauth/connect" do
-   redirect Instagram.authorize_url(:redirect_uri => CALLBACK_URL)
-end
-
-get "/oauth/callback" do
-  response = Instagram.get_access_token(params[:code], :redirect_uri => CALLBACK_URL)
-  puts response.inspect
-  puts response.access_token
-  @token = response.access_token
-  #session[:access_token] = response.access_token
-  redirect '/index.html'
-end
-=end
 
 get '/auth' do
 	redirect client.authorize_url + "&scope=public_content"

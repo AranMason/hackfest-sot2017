@@ -255,7 +255,7 @@ get "/callback" do
 end
 
 get '/test' do
-	[200, get_locations(client.media_search(
+	[200, test(client.media_search(
 	
 	#"latitude":-44.633031728245,"longitude":168.89599135605,
 	  :lat => "-41.3139",

@@ -26,8 +26,7 @@ get '/locations' do
 	puts params.inspect
    [200, get_locations(client.media_search(
 	  :lat => params[:lat],
-	  :lng => params[:long],
-	  :distance => 5000
+	  :lng => params[:long]
 	))]
 
 end

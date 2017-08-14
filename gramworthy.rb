@@ -23,7 +23,7 @@ end
 
 get '/locations' do
 
-  [200, get_locations(param[:lat], param[:long])]
+  [200, get_locations(params['lat'], params['long'])]
 
 end
 

@@ -44,10 +44,9 @@ get '/locations/:id' do |id|
 		
 		responce = http.request request
 		
-		[200. responce.to_json]
+		[200. responce.inspect]
 	
 	end
-	[200,"foobar"]
 
 end
 

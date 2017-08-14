@@ -1,6 +1,8 @@
 require 'sinatra'
 require 'instagram_api'
 require_relative 'data_handler'
+require 'net/http'
+require 'uri'
 
 #CLIENT_ID 		= "7c84da3caa784119b3550d2370a5c2da"
 #CLIENT_SECRET 	= "cab9868fa7374c68bf32966ce93df1be"
@@ -33,7 +35,10 @@ end
 get '/locations/:id' do |id|
 	token = client.get_access_token
 	#214818324
-	[200,"https://api.instagram.com/v1/locations/#{id}/media/recent?access_token=#{token}"]
+	
+	
+	
+	[200,Net::HTTP.get_response(URI.parse("https://api.instagram.com/v1/locations/#{id}/media/recent?access_token=#{token}"))]
 
 end
 

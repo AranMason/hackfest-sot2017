@@ -12,26 +12,10 @@ end
 def mostFreq(frequency, points)
 	
 	#Sort the locations
-
-	frequency = frequency.sort_by(){|image, freq| freq}.reverse
+	freq = frequency.sort_by(){|image, freq| freq}.reverse[0,points]
+	results = Hash[freq]
 	
-	#Cull down to the given number of points. If it is not a value number of points, will default to 3.
-	if points < 1 or points == nil
-		points = 3
-	end
-	
-	results = Hash.new
-	
-	points = [points, frequency.length].min
-	
-	points.times do |i|
-		key = frequency.keys[i]
-		results[key] = (frequency[key])
-	end
-	
-	
-	#https://stackoverflow.com/questions/4339553/sort-hash-by-key-return-hash-in-ruby
-	return results
+	results
 end
 
 # Return a set of location objects
@@ -46,28 +30,32 @@ def get_locations(image_set)
 		loc = image['location']
 		#Skip images that are not attached to a location
 		if loc != nil
-			#INcrements the frequency count of that location by one.
-			frequency[loc.name] = frequency.fetch(loc.name, 1){|i| i + 1 }
-			 locations << loc			 
+			#Increments the frequency count of that location by one.
+			loc_freq = frequency.fetch(loc['name'], 0)
+			frequency[loc['name']] = loc_freq+1
+			locations << loc			 
 		end
 	end
-
+	
 	most_freq = mostFreq(frequency, 3)
 	
 	most_freq_loc = Array.new
 
 	# Get the location data for the most frequent locations
 	
-	locations.each do |loc|
-		if most_freq.includes?(most_freq.keys)
-			# 
-			loc.frequency = most_freq[loc.name]
-			most_freq_loc << loc
+	most_freq.each do |key, value|
+		puts key
+		puts value
+		locations.each do |loc|
+			if loc['name'] == key
+				loc['frequency'] = value
+				most_freq_loc << loc
+			end
 		end
+		puts '---'
 	end
 	
-	return most_freq_loc
-
+	most_freq_loc
 end
 
 
@@ -76,8 +64,6 @@ end
 def pop_locations(image_set, points)
 
   freq_results = freq_search image_set, points
-
-  
 
 end
 

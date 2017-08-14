@@ -22,34 +22,8 @@ get '/' do
 end
 
 get '/locations' do
-  [200, {
-	"data": [{
 
-		"location": {
-			      "latitude": -41.307489,
-			"longitude": 174.777088,
-			"name": "Newtown",
-			"frequency": 1
-		}
-	},
-	{
-		"location": {
-			"latitude": -41.310967,
-			"longitude": 174.779663,
-			"name": "Newtown",
-			"frequency": 2
-		}
-	},
-	{
-		"location": {
-			"latitude": -41.303641,
-			"longitude": 174.774985,
-			"name": "Mount Cook",
-			"frequency": 3
-		}
-	}
-	]
-}.to_json]
+  [200, get_locations(param[:lat], param[:long])
 
 end
 

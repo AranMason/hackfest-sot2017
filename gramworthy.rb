@@ -250,8 +250,7 @@ end
 
 get "/callback" do
 	client.get_access_token(params[:code])
-	#client.recent.to_json
-	redirect '/index.html
+	redirect '/index.html'
 end
 
 get '/test' do

@@ -27,7 +27,7 @@ get '/locations' do
    [200, get_locations(client.media_search(
 	  :lat => params[:lat],
 	  :lng => params[:long]
-	))]
+	)).to_json]
 
 end
 

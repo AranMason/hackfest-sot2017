@@ -22,7 +22,8 @@ get '/' do
 end
 
 get '/locations' do
-
+	puts '-----'
+	puts params.inspect
   [200, get_locations(params['lat'], params['long'])]
 
 end

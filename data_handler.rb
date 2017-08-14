@@ -42,12 +42,12 @@ def get_locations(image_set)
 	
 	#Get frequency of locations in the data.
 	
-	image_set["data"].each do |image|
-		loc = image["location"]
+	image_set.data.each do |image|
+		loc = image.location
 		#Skip images that are not attached to a location
 		if loc != nil
 			#INcrements the frequency count of that location by one.
-			frequency[loc["name"]] = frequency.fetch(loc["name"], 1){|i| i + 1 }
+			frequency[loc.name] = frequency.fetch(loc.name, 1){|i| i + 1 }
 			 locations << loc			 
 		end
 	end
@@ -61,7 +61,7 @@ def get_locations(image_set)
 	locations.each do |loc|
 		if most_freq.includes?(most_freq.keys)
 			# 
-			loc['frequency'] = most_freq[loc['name']]
+			loc.frequency = most_freq[loc.name]
 			most_freq_loc << loc
 		end
 	end

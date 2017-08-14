@@ -35,10 +35,19 @@ end
 get '/locations/:id' do |id|
 	token = client.get_access_token
 	#214818324
+	uri = URI("https://api.instagram.com/v1/locations/#{id}/media/recent?access_token=#{token}")
 	
+	req = Net::HTTP::Get.new(uri)
 	
+	res = Net::HTTP.start(uri.hostname, uri.port, :use_ssl => uri.scheme== 'https') do |http|
+		request = Net::HTTP::Get.new uri
+		
+		responce = http.request request
+		
+		[200. responce.to_json]
 	
-	[200,Net::HTTP.get_response(URI.parse("https://api.instagram.com/v1/locations/#{id}/media/recent?access_token=#{token}"))]
+	end
+	[200,"foobar"]
 
 end
 

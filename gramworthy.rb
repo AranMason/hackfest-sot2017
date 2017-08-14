@@ -250,12 +250,12 @@ end
 
 get "/callback" do
 	client.get_access_token(params[:code])
-	client.recent.to_json
-	#redirect '/test'
+	#client.recent.to_json
+	redirect '/test'
 end
 
 get '/test' do
-	[200, test(client.media_search(
+	[200, get_locations(client.media_search(
 	
 	#"latitude":-44.633031728245,"longitude":168.89599135605,
 	  :lat => "-41.3139",

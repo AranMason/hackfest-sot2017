@@ -18,7 +18,7 @@ enable :sessions
 @token
 
 get '/' do
-	redirect '/index.html' # This needs to be changed back to root '/' later
+	redirect '/auth' # This needs to be changed back to root '/' later
 end
 
 get '/locations' do
@@ -251,6 +251,7 @@ end
 get "/callback" do
 	client.get_access_token(params[:code])
 	client.user.to_json
+	#redirect '/test'
 end
 
 get '/test' do

@@ -7,7 +7,7 @@ class DataHandler
 		data.to_json
 	end
 
-	#Finds the most common location amoung a given dataset. 
+	#Finds the most common location among a given dataset. 
 	#image_set - the set of image data to search
 	#points the top n results to return
 	def mostFreq(frequency, points)

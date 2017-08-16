@@ -24,7 +24,7 @@ get '/' do
 end
 
 get '/locations' do
-   [200, get_locations(client.media_search(
+   [200, DataHandler.get_locations(client.media_search(
 	  :lat => params[:lat],
 	  :lng => params[:long],
 	  :distance => 5000
@@ -32,7 +32,7 @@ get '/locations' do
 
 end
 
-get '/locations/:id' do |id|
+get '/locations/media/:id' do |id|
 	token = client.get_access_token
 	#214818324
 	uri = URI("https://api.instagram.com/v1/locations/#{id}/media/recent?access_token=#{token}")
@@ -61,25 +61,5 @@ end
 get "/callback" do
 	client.get_access_token(params[:code])
 	redirect '/index.html'
-end
-
-get '/test' do
-	[200, test(client.media_search(
-	
-	#"latitude":-44.633031728245,"longitude":168.89599135605,
-	  :lat => "-41.3139",
-	  :lng => "174.7694",
-	  :distance => 5000
-	))]
-end
-
-##-----------------------------------------------
-## Instagram API Oauth2 connection
-##-----------------------------------------------
-
-get "/media_search" do
-  puts @token
-  client = client.user
-  [200,  client]
 end
 

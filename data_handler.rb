@@ -10,7 +10,7 @@ class DataHandler
 	#Finds the most common location among a given dataset. 
 	#image_set - the set of image data to search
 	#points the top n results to return
-	def mostFreq(frequency, points)
+	def self.mostFreq(frequency, points)
 		
 		#Sort the locations
 		freq = frequency.sort_by(){|image, freq| freq}.reverse[0,points]
@@ -20,7 +20,7 @@ class DataHandler
 	end
 
 	# Return a set of location objects
-	def get_locations(image_set)
+	def self.get_locations(image_set)
 
 	  locations = Set.new
 	  frequency = Hash.new

@@ -89,7 +89,7 @@ class DataHandler
 		return results
 	end
 	### Testing
-
+=begin
 	test_data = JSON.parse('{
 		"data": [{
 			"distance": 41.741369194629698,
@@ -188,5 +188,5 @@ class DataHandler
 	 
 	loc = get_locations(test_data)
 	loc.each { |location| puts location }
-	
+=end	
 end

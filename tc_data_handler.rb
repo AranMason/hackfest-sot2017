@@ -4,6 +4,7 @@ require 'test/unit'
 class TestDataHandler < Test::Unit::TestCase
 
   def setup
+
     @instagram_data = JSON.parse('{
 		"data": [{
 			"distance": 41.741369194629698,
@@ -102,7 +103,7 @@ class TestDataHandler < Test::Unit::TestCase
   end
 
   def test_get_locations
-    
+
   end
 
 end

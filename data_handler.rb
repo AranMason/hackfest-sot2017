@@ -3,92 +3,92 @@ require 'set'
 
 class DataHandler
 
-	def test(data)
-		data.to_json
+  def test(data)
+    data.to_json
+  end
+
+  #Finds the most common location among a given dataset. 
+  #image_set - the set of image data to search
+  #points the top n results to return
+  def self.mostFreq(frequency, points)
+    
+    #Sort the locations
+    freq = frequency.sort_by(){|image, freq| freq}.reverse[0,points]
+    results = Hash[freq]
+    
+    results
+  end
+
+  # Return a set of location objects
+  def self.get_locations(image_set)
+
+    locations = Set.new
+    frequency = Hash.new
+    
+    #Get frequency of locations in the data.
+    
+    image_set['data'].each do |image|
+      loc = image['location']
+      #Skip images that are not attached to a location
+      if loc != nil
+	#Increments the frequency count of that location by one.
+	loc_freq = frequency.fetch(loc['name'], 0)
+	frequency[loc['name']] = loc_freq+1
+	locations << loc			 
+      end
+    end
+    
+    most_freq = mostFreq(frequency, 3)
+    
+    most_freq_loc = Array.new
+
+    # Get the location data for the most frequent locations
+    
+    most_freq.each do |key, value|
+      puts key
+      puts value
+      locations.each do |loc|
+	if loc['name'] == key
+	  loc['frequency'] = value
+	  most_freq_loc << loc
 	end
+      end
+      puts '---'
+    end
+    
+    most_freq_loc
+  end
 
-	#Finds the most common location among a given dataset. 
-	#image_set - the set of image data to search
-	#points the top n results to return
-	def self.mostFreq(frequency, points)
-		
-		#Sort the locations
-		freq = frequency.sort_by(){|image, freq| freq}.reverse[0,points]
-		results = Hash[freq]
-		
-		results
+
+
+  # Return locational data for the most popular locations in a given radius
+  def pop_locations(image_set, points)
+
+    freq_results = freq_search image_set, points
+
+  end
+
+  #Finds all images in the given set that contains the given #tags
+  def hashtag_filter(images, tags)
+    results = Array.new
+    
+    images.data.each do |photo|
+      photo.tags.each do |tag|
+	
+      end
+    end
+    
+    for image in data.data
+      for tag in tags
+	if image.tags.includes? tag
+	  results << image
 	end
-
-	# Return a set of location objects
-	def self.get_locations(image_set)
-
-	  locations = Set.new
-	  frequency = Hash.new
-		
-		#Get frequency of locations in the data.
-		
-		image_set['data'].each do |image|
-			loc = image['location']
-			#Skip images that are not attached to a location
-			if loc != nil
-				#Increments the frequency count of that location by one.
-				loc_freq = frequency.fetch(loc['name'], 0)
-				frequency[loc['name']] = loc_freq+1
-				locations << loc			 
-			end
-		end
-		
-		most_freq = mostFreq(frequency, 3)
-		
-		most_freq_loc = Array.new
-
-		# Get the location data for the most frequent locations
-		
-		most_freq.each do |key, value|
-			puts key
-			puts value
-			locations.each do |loc|
-				if loc['name'] == key
-					loc['frequency'] = value
-					most_freq_loc << loc
-				end
-			end
-			puts '---'
-		end
-		
-		most_freq_loc
-	end
-
-
-
-	# Return locational data for the most popular locations in a given radius
-	def pop_locations(image_set, points)
-
-	  freq_results = freq_search image_set, points
-
-	end
-
-	#Finds all images in the given set that contains the given #tags
-	def hashtag_filter(images, tags)
-		results = Array.new
-		
-		images.data.each do |photo|
-			photo.tags.each do |tag|
-				
-			end
-		end
-		
-		for image in data.data
-			for tag in tags
-				if image.tags.includes? tag
-					results << image
-				end
-			end
-		end
-		
-		return results
-	end
-	### Testing
+      end
+    end
+    
+    return results
+  end
+  ### Testing
 =begin
 	test_data = JSON.parse('{
 		"data": [{
@@ -183,7 +183,7 @@ class DataHandler
 			"id": "3",
 			"location": null
 		}
-	}]}')
+	        }]}')
 
 	 
 	loc = get_locations(test_data)

@@ -26,13 +26,13 @@ Roger Nesbitt
 ## How to Build
 
 1. First clone the repo:
-    $ git clone https://github.com/AngelOfMercy/hackfest-sot2017.git
+```$ git clone https://github.com/AngelOfMercy/hackfest-sot2017.git```
 
 2. Install the dependancies:
-    $ bundle install
+```$ bundle install```
 
 3. Run the program:
-    $ ruby gramworthy.rb
+```$ ruby gramworthy.rb```
 
 4. View in your browser at ```localhost:4567```
 

@@ -21,4 +21,19 @@ The goal of this application is to allow socially engaged millennials to find ke
 
 ### Special Thanks
 Sam Jarman - Mentor
-Roger Nesbitt 
+Roger Nesbitt
+
+## How to Build
+
+1. First clone the repo:
+    $ git clone https://github.com/AngelOfMercy/hackfest-sot2017.git
+
+2. Install the dependancies:
+    $ bundle install
+
+3. Run the program:
+    $ ruby gramworthy.rb
+
+4. View in your browser at ```localhost:4567```
+
+5. Log in with your Instagram developer account (Invite to the sandbox required)
